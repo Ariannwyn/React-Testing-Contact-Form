@@ -14,7 +14,7 @@ const ContactForm = () => {
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="firstName">First Name*</label>
+          <label htmlFor="firstName">First Name</label>
           <input
             name="firstName"
             placeholder="Edd"
@@ -34,6 +34,17 @@ const ContactForm = () => {
           />
           {errors.lastName && (
             <p>Looks like there was an error: {errors.lastName.type}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="companyName">Company Name*</label>
+          <input
+            name="companyName"
+            placeholder="Apple"
+            ref={register({ required: true })}
+          />
+          {errors.lastName && (
+            <p>Looks like there was an error: {errors.companyName.type}</p>
           )}
         </div>
 
